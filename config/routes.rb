@@ -1,7 +1,7 @@
 MyBlog::Application.routes.draw do
   resources :blogs
 
-  root 'entries#index'
+  root 'blogs#index'
 
   resources :entries
 
