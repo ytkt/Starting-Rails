@@ -1,27 +1,27 @@
 # Rails入門
-## 今回やること
+## 第一回やること
 1. プロジェクトを作成する
 2. サーバーを起動する
 3. generatorを使ってアプリケーションのひな形を作る
 4. ルーティングを変更する
 5. viewテンプレートをいじる
 6. Controllerをいじる
-7. Twitterもどきのモデルを設計する
 
 
-## 1. プロジェクトを作成する
+### 1. プロジェクトを作成する
 プロジェクトは```rails new <Project Name>```	で作成します。  
 上記コマンドを実行すると```<Project Name>```のディレクトリができます。
 
 	$ rails new MyBlog
 	$ cd MyBlog
-
 	
-## 2. サーバを起動する
+
+### 2. サーバを起動する
 サーバーはWebrickがデフォルトでインストールされ、```rails server```で起動することができます。  
 サーバーを起動したまま開発するには別のシェルを立ち上げます。
 
-## 3. generatorを使ってアプリケーションのひな形を作る
+
+### 3. generatorを使ってアプリケーションのひな形を作る
 ブログの1つの記事を```Entry```とします。```Entry```には```タイトル```,```本文```,```作成日時```があればよいとします。  
 Railsにはデータ型があり、以下のものが使えます。
 
@@ -94,7 +94,7 @@ scaffoldを使うとModel, Controller, View Templates, migration script, js, css
 
 サーバーを立ち上げて、[localhost:3000/entries](localhost:3000/entries)へアクセスすると```Listing entries```と表示されてひと通りの入力、表示、編集、削除ができるようになります。
 
-## 4. ルーティングテーブルを変更する
+### 4. ルーティングテーブルを変更する
 ルーティングテーブルは下記コマンドで確認できます。
 
 	$ rake routes
@@ -106,7 +106,7 @@ scaffoldを使うとModel, Controller, View Templates, migration script, js, css
 
 
 
-## 5. viewテンプレートをいじってみる
+### 5. viewテンプレートをいじってみる
 
 現在の状態で[http://localhost:3000/](http://localhost:3000/)にアクセスした時に表示されるViewテンプレートは```app/views/entries/index.html.erb```というファイルです。
 これを以下のように変更してください。  
@@ -140,7 +140,7 @@ scaffoldを使うとModel, Controller, View Templates, migration script, js, css
 
 
 
-## 6. Controllerをいじってみる
+### 6. Controllerをいじってみる
 controllerはアクセスを受け、どんな処理をし、その処理結果をどう返すかを決定します。
 まずは作成日時の近い順に一覧表示させることをやってみます。```app/controllers/entries_controller.rb```を以下のように変更します。
 
@@ -151,3 +151,13 @@ controllerはアクセスを受け、どんな処理をし、その処理結果�
 	@entries = Entry.all.order("created_at DESC")
 
 すると投稿日時の近い順で表示されます
+
+
+
+## 第二回やること
+1. Blogモデルの生成
+2. Blog-Entryの関連付け
+3. seedデータの投入
+4. Viewの修正
+
+くわしくはコミットログを見てください。
